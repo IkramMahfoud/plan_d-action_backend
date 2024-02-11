@@ -4,8 +4,9 @@ const router =express.Router()
 
 const {createProduct, showProduct, productById, removeProduct, updateProduct} =require('../controllers/productController')
 const {userById}=require('../middleware/user')
+
 router.get('/:productId',showProduct)
-router.post('/create/:userId',createProduct)
+router.post('/create/:userId',userById,createProduct)
 router.delete('/:productId/:userId',removeProduct)
 router.put('/:productId/:userId',updateProduct)
 router.param('userId',userById)

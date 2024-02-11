@@ -1,5 +1,7 @@
 const express =require('express')
 const router =express.Router()
+const {requireSignIn} =require('../middleware/auth')
+
 
 
 const {createCategory} =require('../controllers/categoryController')
