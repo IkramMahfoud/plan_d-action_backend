@@ -1,5 +1,6 @@
 const User =require( '../models/user')
 const JWT = require('jsonwebtoken')
+    
 
 exports.singup=(req,res) =>{
     const user=new User(
@@ -12,6 +13,7 @@ exports.singup=(req,res) =>{
         res.send(user)
     })
 }
+
 
 exports.signin = async (req, res) => {
     try {
