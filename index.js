@@ -11,12 +11,11 @@ require('dotenv').config();
 mongoose.connect(process.env.DATABASE)
         .then(()=>console.log("database connected...."))
         .catch(err =>console.error('db could not connect....'))
-        
+
 // Add this middleware to parse JSON requests
 app.use(bodyParser.json());
 
 //Import Routes
-
 const userRouters=require('./route/user')
 const categoryRouters=require('./route/categories')
 const productRouters=require('./route/product')
@@ -31,6 +30,7 @@ app.use('/api/category',categoryRouters)
 app.use('/api/product',productRouters)
 
 
+// auth
 const authRoutes = require('./route/auth');
 app.use('/auth', authRoutes);
 
